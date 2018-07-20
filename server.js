@@ -9,7 +9,7 @@ var axios = require("axios");
 // Initialize Express
 var app = express();
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines" || 3000;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.get("/scrape", function (req, res) {
    
